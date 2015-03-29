@@ -9,6 +9,13 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+-(void)createOrDismissView;
+-(void)makeViewController;
+-(void)launchInstagramVC;
+@property (nonatomic)int counter;
+
+
+
 
 @end
 
@@ -16,8 +23,62 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.counter = 1;
+
+    
+    
+    UIButton *instagramButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [instagramButton setTitle:@"Instagram" forState:UIControlStateNormal];
+    instagramButton.frame = CGRectMake(0, 300, 200, 60);
+    instagramButton.backgroundColor = [UIColor redColor];
+    [self.view addSubview:instagramButton];
+    [instagramButton addTarget:self action:@selector(launchInstagramVC) forControlEvents:UIControlEventTouchUpInside];
+    
+                                
+    
+                                
+                                 
 }
+
+
+-(void)createOrDismissView{
+    
+    UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(0, 50, 200, 100)];
+    
+    
+    if (self.counter%2) {
+        myView.backgroundColor = [UIColor yellowColor];
+        [self.view addSubview:myView];
+    } else{
+        myView.backgroundColor = [UIColor blueColor];
+        [self.view addSubview:myView];
+    }
+    self.counter++;
+    
+}
+
+
+-(void)makeViewController{
+    UIViewController *newVC = [[UIViewController alloc]init];
+    newVC.view.backgroundColor = [UIColor purpleColor];
+    [self presentViewController:newVC animated:YES completion:nil];
+    
+    
+}
+
+-(void)launchInstagramVC{
+    UIViewController *launchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"firstInstagram"];
+    [self presentViewController:launchVC animated:YES completion:^{}];
+    
+    
+}
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

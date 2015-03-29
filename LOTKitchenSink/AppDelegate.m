@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import <AFNetworking.h>
 @interface AppDelegate ()
 
 @end
@@ -41,5 +41,38 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    NSLog(@"%@",url);
+    
+    NSString *stringURL = [url absoluteString];
+    NSString *token = [stringURL substringFromIndex:27];
+    NSLog(@"token is: %@",token);
+    
+    
+    
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    NSString *userFeedURL = @"https://api.instagram.com/v1/users/self/feed";
+    NSDictionary *userFeedParams = @{@"access_token":token};
+    
+    [session GET:userFeedURL
+      parameters:userFeedParams
+         success:^(NSURLSessionDataTask *task, id responseObject) {
+             NSDictionary *results = responseObject;
+             for (NSDictionary *temp in results[@"data"]) {
+                 NSString *picURL = temp[@"images"][@"standard_resolution"][@"url"];
+                 NSLog(@"Results:%@",picURL);
+             }
+            // NSLog(@"Results:%@",responseObject[@"data"][0][@"images"][@"standard_resolution"][@"url"]);
+         } failure:^(NSURLSessionDataTask *task, NSError *error) {
+             NSLog(@"Failure: %@",error.localizedDescription);
+         }];
+    
+    
+    
+    
+    return YES;
+}
+
 
 @end
