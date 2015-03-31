@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AFNetworking.h>
+#import "LOTDataStore.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     return YES;
 }
 
@@ -43,30 +45,32 @@
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    NSLog(@"%@",url);
+    
+    LOTDataStore *session = [LOTDataStore sharedDataManager];
     
     NSString *stringURL = [url absoluteString];
-    NSString *token = [stringURL substringFromIndex:27];
-    NSLog(@"token is: %@",token);
+    [session addInstaToken:[stringURL substringFromIndex:27]];
+    NSLog(@"token is: %@",[session retrieveInstaToken]);
     
     
     
-    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
-    NSString *userFeedURL = @"https://api.instagram.com/v1/users/self/feed";
-    NSDictionary *userFeedParams = @{@"access_token":token};
-    
-    [session GET:userFeedURL
-      parameters:userFeedParams
-         success:^(NSURLSessionDataTask *task, id responseObject) {
-             NSDictionary *results = responseObject;
-             for (NSDictionary *temp in results[@"data"]) {
-                 NSString *picURL = temp[@"images"][@"standard_resolution"][@"url"];
-                 NSLog(@"Results:%@",picURL);
-             }
-            // NSLog(@"Results:%@",responseObject[@"data"][0][@"images"][@"standard_resolution"][@"url"]);
-         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-             NSLog(@"Failure: %@",error.localizedDescription);
-         }];
+//    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+//    NSString *userFeedURL = @"https://api.instagram.com/v1/users/self/feed";
+//    NSDictionary *userFeedParams = @{@"access_token":token};
+//    
+//    [session GET:userFeedURL
+//      parameters:userFeedParams
+//         success:^(NSURLSessionDataTask *task, id responseObject) {
+//             NSDictionary *results = responseObject;
+//             for (NSDictionary *temp in results[@"data"]) {
+//                 NSString *picURL = temp[@"images"][@"standard_resolution"][@"url"];
+//               //  NSLog(@"Results:%@",picURL);
+//                 [manager addInstagramData:(NSString*)picURL];
+//             }
+//            // NSLog(@"Results:%@",responseObject[@"data"][0][@"images"][@"standard_resolution"][@"url"]);
+//         } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//             NSLog(@"Failure: %@",error.localizedDescription);
+//         }];
     
     
     

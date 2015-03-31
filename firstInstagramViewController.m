@@ -7,10 +7,13 @@
 //
 
 #import "firstInstagramViewController.h"
+#import "LOTDataStore.h"
+
+
 
 @interface firstInstagramViewController ()
-- (IBAction)oAuthButton:(id)sender;
-- (IBAction)goToInstagramButton:(id)sender;
+
+- (IBAction)myFeedButton:(id)sender;
 
 @end
 
@@ -21,6 +24,7 @@
 
     self.view.backgroundColor = [UIColor greenColor];
     
+
     
     
 }
@@ -40,16 +44,32 @@
 }
 */
 
-- (IBAction)oAuthButton:(id)sender {
-    NSURL *yelpAuthURL = [NSURL URLWithString:@"https://instagram.com/oauth/authorize/?client_id=e90b2b96e62c43198d5407544fe97d4a&redirect_uri=instaOAuth://&response_type=token"];
-    [[UIApplication sharedApplication] openURL:yelpAuthURL];
+
+    
+    
+    
+
+
+- (IBAction)myFeedButton:(id)sender {
+    
+    LOTDataStore *manager = [LOTDataStore sharedDataManager];
+        if ([[manager retrieveInstaToken]  isEqual: @""]) {
+                NSURL *instaAuthURL = [NSURL URLWithString:@"https://instagram.com/oauth/authorize/?client_id=e90b2b96e62c43198d5407544fe97d4a&redirect_uri=instaOAuth://&response_type=token"];
+                [[UIApplication sharedApplication] openURL:instaAuthURL];
+        }
+        else{
+    
+    UIStoryboard *myStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *resultsVC = [myStoryboard instantiateViewControllerWithIdentifier:@"resultsVC"];
+    [self presentViewController:resultsVC animated:YES completion:nil];
+    
+        }
+    
     
     
 }
 
-- (IBAction)goToInstagramButton:(id)sender {
-   
-    
-    
-}
+
+
+
 @end

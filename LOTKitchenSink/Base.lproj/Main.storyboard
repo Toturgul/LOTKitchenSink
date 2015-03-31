@@ -36,22 +36,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlA-w3-i3j">
-                                <rect key="frame" x="164" y="156" width="42" height="30"/>
-                                <state key="normal" title="Oauth">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttT-z7-c0R">
+                                <rect key="frame" x="102" y="87" width="170" height="30"/>
+                                <state key="normal" title="My Feed">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="oAuthButton:" destination="F8X-c3-ThY" eventType="touchUpInside" id="hdV-nq-LqS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZP-s9-nsI">
-                                <rect key="frame" x="160" y="251" width="48" height="30"/>
-                                <state key="normal" title="Search">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goToInstagramButton:" destination="F8X-c3-ThY" eventType="touchUpInside" id="8QA-fK-4oU"/>
+                                    <action selector="myFeedButton:" destination="F8X-c3-ThY" eventType="touchUpInside" id="Ln9-z5-7Hc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,7 +52,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQJ-jj-HfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1683.5" y="525.5"/>
+            <point key="canvasLocation" x="1673.5" y="193.5"/>
+        </scene>
+        <!--Insta ResultsVC-->
+        <scene sceneID="MVU-uH-ccs">
+            <objects>
+                <viewController storyboardIdentifier="resultsVC" id="LNJ-md-LKe" customClass="LOTInstaResultsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rcb-GC-W5Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="5ci-Oj-9sz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dmu-Rf-eMk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nwd-i6-CEk">
+                                <rect key="frame" x="0.0" y="236" width="375" height="431"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userFeedCell" textLabel="wTq-Qd-BLt" style="IBUITableViewCellStyleDefault" id="4DU-Cz-wnn">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4DU-Cz-wnn" id="2tB-E7-nc1">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wTq-Qd-BLt">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="instaResultsTableView" destination="nwd-i6-CEk" id="Lef-Yy-umE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fw-sb-GAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2150.5" y="193.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tnR-jy-doh">
