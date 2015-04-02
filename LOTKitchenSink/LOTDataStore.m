@@ -40,7 +40,7 @@
     return _sharedDataManager;
 }
 
--(void)addInstagramData:(NSString*)someObject{
+-(void)addInstagramData:(NSArray*)someObject{
     
     [self.instaData addObject:someObject];
 }

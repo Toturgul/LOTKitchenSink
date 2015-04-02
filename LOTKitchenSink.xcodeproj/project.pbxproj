@@ -11,6 +11,7 @@
 		D4C0C0521AC84E85008C15ED /* LOTDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C0C0511AC84E85008C15ED /* LOTDataStore.m */; };
 		D4C0C0581AC8A615008C15ED /* LOTInstaResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C0C0571AC8A615008C15ED /* LOTInstaResultsVC.m */; };
 		D4D47C6C1ACA07F300151B43 /* LOTInstagramAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D47C6B1ACA07F300151B43 /* LOTInstagramAPIClient.m */; };
+		D4D47C6F1ACB45AD00151B43 /* LOTInstagramTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D47C6E1ACB45AD00151B43 /* LOTInstagramTableViewCell.m */; };
 		D4E3FAAB1AC49C9900A5DEA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3FAAA1AC49C9900A5DEA9 /* main.m */; };
 		D4E3FAAE1AC49C9900A5DEA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3FAAD1AC49C9900A5DEA9 /* AppDelegate.m */; };
 		D4E3FAB11AC49C9900A5DEA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E3FAB01AC49C9900A5DEA9 /* ViewController.m */; };
@@ -41,6 +42,8 @@
 		D4C0C0571AC8A615008C15ED /* LOTInstaResultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOTInstaResultsVC.m; sourceTree = "<group>"; };
 		D4D47C6A1ACA07F300151B43 /* LOTInstagramAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOTInstagramAPIClient.h; sourceTree = "<group>"; };
 		D4D47C6B1ACA07F300151B43 /* LOTInstagramAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOTInstagramAPIClient.m; sourceTree = "<group>"; };
+		D4D47C6D1ACB45AD00151B43 /* LOTInstagramTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOTInstagramTableViewCell.h; sourceTree = "<group>"; };
+		D4D47C6E1ACB45AD00151B43 /* LOTInstagramTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOTInstagramTableViewCell.m; sourceTree = "<group>"; };
 		D4E3FAA51AC49C9900A5DEA9 /* LOTKitchenSink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LOTKitchenSink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E3FAA91AC49C9900A5DEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4E3FAAA1AC49C9900A5DEA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				D4C0C0571AC8A615008C15ED /* LOTInstaResultsVC.m */,
 				D4D47C6A1ACA07F300151B43 /* LOTInstagramAPIClient.h */,
 				D4D47C6B1ACA07F300151B43 /* LOTInstagramAPIClient.m */,
+				D4D47C6D1ACB45AD00151B43 /* LOTInstagramTableViewCell.h */,
+				D4D47C6E1ACB45AD00151B43 /* LOTInstagramTableViewCell.m */,
 			);
 			path = LOTKitchenSink;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				D4C0C0521AC84E85008C15ED /* LOTDataStore.m in Sources */,
 				D4C0C0581AC8A615008C15ED /* LOTInstaResultsVC.m in Sources */,
 				D4E3FAD01AC5C09F00A5DEA9 /* firstInstagramViewController.m in Sources */,
+				D4D47C6F1ACB45AD00151B43 /* LOTInstagramTableViewCell.m in Sources */,
 				D4E3FAAB1AC49C9900A5DEA9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

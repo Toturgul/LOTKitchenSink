@@ -9,6 +9,7 @@
 #import "LOTInstaResultsVC.h"
 #import "LOTDataStore.h"
 #import <AFNetworking.h>
+#import "LOTInstagramTableViewCell.h"
 
 @interface LOTInstaResultsVC ()
 @property (weak, nonatomic) IBOutlet UITableView *instaResultsTableView;
@@ -36,17 +37,35 @@
              NSDictionary *results = responseObject;
              for (NSDictionary *temp in results[@"data"]) {
                  NSString *picURL = temp[@"images"][@"standard_resolution"][@"url"];
-                 [self.manager addInstagramData:picURL];
-                 NSLog(@"AFN says:%@",picURL);
-             }
+              //   [self.manager addInstagramData:picURL];
+             //    NSLog(@"$$$$$$$$$$:%@",temp);
+                 
+                 
+                 
+                 if (temp[@"caption"] == (id)[NSNull null]) {
+                     NSString *username =@"No Username";
+                     NSString *caption = @"No Caption";
+                     NSLog(@"AFN says:%@....%@",username, caption);
+                     [self.manager addInstagramData:@[username,picURL,caption]];
+                     
+                 }else{
+                     NSString *username = temp[@"caption"][@"from"][@"username"];
+                     NSString *caption = temp[@"caption"][@"text"];
+                     NSLog(@"AFN says:%@....%@",username, caption);
+                     [self.manager addInstagramData:@[username,picURL,caption]];
+                 }
+
+                       
+                       }
+             
              NSLog(@"retrievedata count:%lu",(unsigned long)[[self.manager retrieveInstagramData]count]);
 
              [self.instaResultsTableView reloadData];
-         } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                       } failure:^(NSURLSessionDataTask *task, NSError *error) {
              NSLog(@"Failure: %@",error.localizedDescription);
          }];
 
-
+                     
 
 }
 
@@ -68,15 +87,37 @@
     return [[self.manager retrieveInstagramData] count];
 }
 
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 150;
+}
+
+
+
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    static NSString *cellIdentifier = @"userFeedCell";
-    UITableViewCell *cell = [self.instaResultsTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+//    static NSString *cellIdentifier = @"userFeedCell";
+//    UITableViewCell *cell = [self.instaResultsTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
 
-    NSString *cellFiller = [self.manager retrieveInstagramData][indexPath.row];
-    NSLog(@"%@",cellFiller);
-    cell.textLabel.text = cellFiller;
+    
+    static NSString *cellIdentifier = @"photoCell";
+    LOTInstagramTableViewCell *cell = [self.instaResultsTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    
+    NSString *cellUsernameString = [self.manager retrieveInstagramData][indexPath.row][0];
+    NSString *cellImageString = [self.manager retrieveInstagramData][indexPath.row][1];
+    NSString *cellCaptionString = [self.manager retrieveInstagramData][indexPath.row][2];
+    
+    cell.userIDLabel.text = cellUsernameString;
+    cell.photo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:cellImageString]]];
+    cell.captionLabel.text = cellCaptionString;
+    
+    
+    
+   
     return cell;
     
 }

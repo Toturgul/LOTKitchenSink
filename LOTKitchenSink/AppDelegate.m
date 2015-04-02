@@ -19,6 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    NSDictionary *testDict = @{@"hello":@"sir",
+                               @"bye":@"sir"};
+   // NSLog(@"%@:%@...%@:%@",[[testDict allKeysForObject:@"sir"] firstObject],testDict[@"hello"][0],[[testDict allKeysForObject:@"maam"] firstObject],testDict[@"hello"][1]);
+    NSLog(@"%@",testDict);
     return YES;
 }
 
@@ -51,27 +55,6 @@
     NSString *stringURL = [url absoluteString];
     [session addInstaToken:[stringURL substringFromIndex:27]];
     NSLog(@"token is: %@",[session retrieveInstaToken]);
-    
-    
-    
-//    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
-//    NSString *userFeedURL = @"https://api.instagram.com/v1/users/self/feed";
-//    NSDictionary *userFeedParams = @{@"access_token":token};
-//    
-//    [session GET:userFeedURL
-//      parameters:userFeedParams
-//         success:^(NSURLSessionDataTask *task, id responseObject) {
-//             NSDictionary *results = responseObject;
-//             for (NSDictionary *temp in results[@"data"]) {
-//                 NSString *picURL = temp[@"images"][@"standard_resolution"][@"url"];
-//               //  NSLog(@"Results:%@",picURL);
-//                 [manager addInstagramData:(NSString*)picURL];
-//             }
-//            // NSLog(@"Results:%@",responseObject[@"data"][0][@"images"][@"standard_resolution"][@"url"]);
-//         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//             NSLog(@"Failure: %@",error.localizedDescription);
-//         }];
-    
     
     
     

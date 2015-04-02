@@ -12,7 +12,7 @@
 
 -(instancetype)init;
 + (instancetype)sharedDataManager;
--(void)addInstagramData:(NSString*)someObject;
+-(void)addInstagramData:(NSArray*)someObject;
 -(NSArray*)retrieveInstagramData;
 -(void)addInstaToken:(NSString*)tokenAsString;
 -(NSString*)retrieveInstaToken;
