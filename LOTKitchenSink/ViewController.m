@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "firstInstagramViewController.h"
 @interface ViewController ()
 -(void)createOrDismissView;
 -(void)makeViewController;
@@ -35,7 +35,18 @@
     [self.view addSubview:instagramButton];
     [instagramButton addTarget:self action:@selector(launchInstagramVC) forControlEvents:UIControlEventTouchUpInside];
     
-                                
+    
+    [self.navigationItem setTitle:@"Services"];
+//    UIBarButtonItem *uselessButton = [[UIBarButtonItem alloc]initWithTitle:@" style:<#(UIBarButtonItemStyle)#> target:<#(id)#> action:<#(SEL)#>]
+    
+    
+    
+    
+    
+    
+//    LOTTestXibViewController *vc = [[LOTTestXibViewController alloc]initWithNibName:@"LOTTestXib" bundle:nil];
+//    [self presentViewController:vc animated:YES
+//                    completion:nil];
     
                                 
                                  
@@ -68,8 +79,13 @@
 }
 
 -(void)launchInstagramVC{
-    UIViewController *launchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"firstInstagram"];
-    [self presentViewController:launchVC animated:YES completion:^{}];
+    
+    firstInstagramViewController *nextVC = [[firstInstagramViewController alloc]init];
+    [[self navigationController]pushViewController:nextVC animated:YES];
+    
+//    //If using storyboard
+//    UIViewController *launchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"firstInstagram"];
+//    [self presentViewController:launchVC animated:YES completion:^{}];
     
     
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A8936EF66828750D0B76BBAA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5343D128B602F3967133CD4B /* libPods.a */; };
+		D491417B1AD6CDF100EC1A0E /* LOTInstaResultsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D491417A1AD6CDF100EC1A0E /* LOTInstaResultsVC.xib */; };
 		D4C0C0521AC84E85008C15ED /* LOTDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C0C0511AC84E85008C15ED /* LOTDataStore.m */; };
 		D4C0C0581AC8A615008C15ED /* LOTInstaResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C0C0571AC8A615008C15ED /* LOTInstaResultsVC.m */; };
 		D4D47C6C1ACA07F300151B43 /* LOTInstagramAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D47C6B1ACA07F300151B43 /* LOTInstagramAPIClient.m */; };
@@ -36,6 +37,7 @@
 		1DE499A9DCD59C56801EE5C3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5343D128B602F3967133CD4B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5977064404D989027FC7777E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D491417A1AD6CDF100EC1A0E /* LOTInstaResultsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LOTInstaResultsVC.xib; sourceTree = "<group>"; };
 		D4C0C0501AC84E85008C15ED /* LOTDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOTDataStore.h; sourceTree = "<group>"; };
 		D4C0C0511AC84E85008C15ED /* LOTDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOTDataStore.m; sourceTree = "<group>"; };
 		D4C0C0561AC8A615008C15ED /* LOTInstaResultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOTInstaResultsVC.h; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				D4C0C0511AC84E85008C15ED /* LOTDataStore.m */,
 				D4C0C0561AC8A615008C15ED /* LOTInstaResultsVC.h */,
 				D4C0C0571AC8A615008C15ED /* LOTInstaResultsVC.m */,
+				D491417A1AD6CDF100EC1A0E /* LOTInstaResultsVC.xib */,
 				D4D47C6A1ACA07F300151B43 /* LOTInstagramAPIClient.h */,
 				D4D47C6B1ACA07F300151B43 /* LOTInstagramAPIClient.m */,
 				D4D47C6D1ACB45AD00151B43 /* LOTInstagramTableViewCell.h */,
@@ -253,6 +256,7 @@
 				D4E3FAB41AC49C9900A5DEA9 /* Main.storyboard in Resources */,
 				D4E3FAB91AC49C9900A5DEA9 /* LaunchScreen.xib in Resources */,
 				D4E3FAB61AC49C9900A5DEA9 /* Images.xcassets in Resources */,
+				D491417B1AD6CDF100EC1A0E /* LOTInstaResultsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,8 +37,7 @@
              NSDictionary *results = responseObject;
              for (NSDictionary *temp in results[@"data"]) {
                  NSString *picURL = temp[@"images"][@"standard_resolution"][@"url"];
-              //   [self.manager addInstagramData:picURL];
-             //    NSLog(@"$$$$$$$$$$:%@",temp);
+
                  
                  
                  
@@ -96,29 +95,35 @@
 
 
 
+
+
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    static NSString *cellIdentifier = @"feedCell";
     
-//    static NSString *cellIdentifier = @"userFeedCell";
-//    UITableViewCell *cell = [self.instaResultsTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-
-    
-    static NSString *cellIdentifier = @"photoCell";
-    LOTInstagramTableViewCell *cell = [self.instaResultsTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell  alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
     
     NSString *cellUsernameString = [self.manager retrieveInstagramData][indexPath.row][0];
     NSString *cellImageString = [self.manager retrieveInstagramData][indexPath.row][1];
     NSString *cellCaptionString = [self.manager retrieveInstagramData][indexPath.row][2];
     
-    cell.userIDLabel.text = cellUsernameString;
-    cell.photo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:cellImageString]]];
-    cell.captionLabel.text = cellCaptionString;
+    cell.textLabel.text = cellUsernameString;
+    cell.detailTextLabel.text = cellCaptionString;
+    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:cellImageString]]];
     
-    
-    
-   
+        
     return cell;
+    
+    
+
+    
+    
+    
+    
     
 }
 
@@ -127,6 +132,26 @@
 
 
 
+
+////Storyboard Version
+//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    static NSString *cellIdentifier = @"photoCell";
+//    LOTInstagramTableViewCell *cell = [self.instaResultsTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+//    
+//    
+//    NSString *cellUsernameString = [self.manager retrieveInstagramData][indexPath.row][0];
+//    NSString *cellImageString = [self.manager retrieveInstagramData][indexPath.row][1];
+//    NSString *cellCaptionString = [self.manager retrieveInstagramData][indexPath.row][2];
+//    
+//    cell.userIDLabel.text = cellUsernameString;
+//    cell.photo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:cellImageString]]];
+//    cell.captionLabel.text = cellCaptionString;
+//    
+//    
+//    return cell;
+//    
+//}
 
 
 

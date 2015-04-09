@@ -8,6 +8,7 @@
 
 #import "firstInstagramViewController.h"
 #import "LOTDataStore.h"
+#import "LOTInstaResultsVC.h"
 
 
 
@@ -24,7 +25,19 @@
 
     self.view.backgroundColor = [UIColor greenColor];
     
-
+    CGRect bufferSpecs = CGRectMake(60, 150, 200, 100);
+    UIView *buttonBuffer = [[UIView alloc]initWithFrame:bufferSpecs];
+    buttonBuffer.backgroundColor = [UIColor brownColor];
+    [self.view addSubview:buttonBuffer];
+    
+    
+    CGRect buttonSpecs = CGRectMake(5, 5, 180, 90);
+    UIButton *myFeedButton = [[UIButton alloc] initWithFrame:buttonSpecs];
+    myFeedButton.backgroundColor = [UIColor orangeColor];
+    [myFeedButton setTitle:@"My Feed" forState:UIControlStateNormal];
+    [buttonBuffer addSubview:myFeedButton];
+    
+    [myFeedButton addTarget:self action:@selector(launchInstaResults) forControlEvents:UIControlEventTouchUpInside];
     
     
 }
@@ -46,8 +59,24 @@
 
 
     
+
+
+-(void)launchInstaResults{
+    LOTDataStore *manager = [LOTDataStore sharedDataManager];
+    if ([[manager retrieveInstaToken]  isEqual: @""]) {
+        NSURL *instaAuthURL = [NSURL URLWithString:@"https://instagram.com/oauth/authorize/?client_id=e90b2b96e62c43198d5407544fe97d4a&redirect_uri=instaOAuth://&response_type=token"];
+        [[UIApplication sharedApplication] openURL:instaAuthURL];
+    }
+    else{
+        
+        LOTInstaResultsVC *nextVC = [[LOTInstaResultsVC alloc]init];
+        [[self navigationController] pushViewController:nextVC animated:YES];
+        
+        
+    }
     
-    
+}
+
 
 
 - (IBAction)myFeedButton:(id)sender {

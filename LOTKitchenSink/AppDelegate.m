@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import <AFNetworking.h>
 #import "LOTDataStore.h"
+#import "ViewController.h"
 @interface AppDelegate ()
+
 
 @end
 
@@ -18,11 +20,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    UINavigationController *navController = [[UINavigationController alloc]init];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     
-    NSDictionary *testDict = @{@"hello":@"sir",
-                               @"bye":@"sir"};
-   // NSLog(@"%@:%@...%@:%@",[[testDict allKeysForObject:@"sir"] firstObject],testDict[@"hello"][0],[[testDict allKeysForObject:@"maam"] firstObject],testDict[@"hello"][1]);
-    NSLog(@"%@",testDict);
+    ViewController *vc = [[ViewController alloc]init];
+    [navController setViewControllers:@[vc]];
+    [self.window setRootViewController:navController];
+
+    
     return YES;
 }
 
