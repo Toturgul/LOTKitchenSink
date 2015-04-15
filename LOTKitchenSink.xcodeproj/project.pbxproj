@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FEDC7CC1ADEE71800158ABE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEDC7CB1ADEE71800158ABE /* MapKit.framework */; };
+		0FEDC7CE1ADEE72500158ABE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEDC7CD1ADEE72500158ABE /* CoreLocation.framework */; };
+		0FEDC7D21ADEE93100158ABE /* MapLoadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEDC7D01ADEE93100158ABE /* MapLoadVC.m */; };
+		0FEDC7D31ADEE93100158ABE /* MapLoadVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEDC7D11ADEE93100158ABE /* MapLoadVC.xib */; };
 		A8936EF66828750D0B76BBAA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5343D128B602F3967133CD4B /* libPods.a */; };
 		D491417B1AD6CDF100EC1A0E /* LOTInstaResultsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D491417A1AD6CDF100EC1A0E /* LOTInstaResultsVC.xib */; };
 		D4C0C0521AC84E85008C15ED /* LOTDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C0C0511AC84E85008C15ED /* LOTDataStore.m */; };
@@ -34,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FEDC7CB1ADEE71800158ABE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0FEDC7CD1ADEE72500158ABE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0FEDC7CF1ADEE93100158ABE /* MapLoadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLoadVC.h; sourceTree = "<group>"; };
+		0FEDC7D01ADEE93100158ABE /* MapLoadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLoadVC.m; sourceTree = "<group>"; };
+		0FEDC7D11ADEE93100158ABE /* MapLoadVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapLoadVC.xib; sourceTree = "<group>"; };
 		1DE499A9DCD59C56801EE5C3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5343D128B602F3967133CD4B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5977064404D989027FC7777E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FEDC7CE1ADEE72500158ABE /* CoreLocation.framework in Frameworks */,
+				0FEDC7CC1ADEE71800158ABE /* MapKit.framework in Frameworks */,
 				A8936EF66828750D0B76BBAA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +105,8 @@
 		A20BFC906448878763319035 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FEDC7CD1ADEE72500158ABE /* CoreLocation.framework */,
+				0FEDC7CB1ADEE71800158ABE /* MapKit.framework */,
 				5343D128B602F3967133CD4B /* libPods.a */,
 			);
 			name = Frameworks;
@@ -141,6 +154,9 @@
 				D4D47C6B1ACA07F300151B43 /* LOTInstagramAPIClient.m */,
 				D4D47C6D1ACB45AD00151B43 /* LOTInstagramTableViewCell.h */,
 				D4D47C6E1ACB45AD00151B43 /* LOTInstagramTableViewCell.m */,
+				0FEDC7CF1ADEE93100158ABE /* MapLoadVC.h */,
+				0FEDC7D01ADEE93100158ABE /* MapLoadVC.m */,
+				0FEDC7D11ADEE93100158ABE /* MapLoadVC.xib */,
 			);
 			path = LOTKitchenSink;
 			sourceTree = "<group>";
@@ -257,6 +273,7 @@
 				D4E3FAB91AC49C9900A5DEA9 /* LaunchScreen.xib in Resources */,
 				D4E3FAB61AC49C9900A5DEA9 /* Images.xcassets in Resources */,
 				D491417B1AD6CDF100EC1A0E /* LOTInstaResultsVC.xib in Resources */,
+				0FEDC7D31ADEE93100158ABE /* MapLoadVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +328,7 @@
 				D4E3FAB11AC49C9900A5DEA9 /* ViewController.m in Sources */,
 				D4E3FAAE1AC49C9900A5DEA9 /* AppDelegate.m in Sources */,
 				D4C0C0521AC84E85008C15ED /* LOTDataStore.m in Sources */,
+				0FEDC7D21ADEE93100158ABE /* MapLoadVC.m in Sources */,
 				D4C0C0581AC8A615008C15ED /* LOTInstaResultsVC.m in Sources */,
 				D4E3FAD01AC5C09F00A5DEA9 /* firstInstagramViewController.m in Sources */,
 				D4D47C6F1ACB45AD00151B43 /* LOTInstagramTableViewCell.m in Sources */,

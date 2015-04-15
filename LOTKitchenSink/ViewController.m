@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "firstInstagramViewController.h"
+#import "MapLoadVC.h"
 @interface ViewController ()
 -(void)createOrDismissView;
 -(void)makeViewController;
@@ -23,31 +24,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.navigationItem setTitle:@"Services"];
     self.counter = 1;
 
     
     
     UIButton *instagramButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [instagramButton setTitle:@"Instagram" forState:UIControlStateNormal];
-    instagramButton.frame = CGRectMake(0, 300, 200, 60);
+    instagramButton.frame = CGRectMake(0, 200, 200, 60);
     instagramButton.backgroundColor = [UIColor redColor];
     [self.view addSubview:instagramButton];
     [instagramButton addTarget:self action:@selector(launchInstagramVC) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [self.navigationItem setTitle:@"Services"];
-//    UIBarButtonItem *uselessButton = [[UIBarButtonItem alloc]initWithTitle:@" style:<#(UIBarButtonItemStyle)#> target:<#(id)#> action:<#(SEL)#>]
-    
-    
-    
-    
-    
-    
-//    LOTTestXibViewController *vc = [[LOTTestXibViewController alloc]initWithNibName:@"LOTTestXib" bundle:nil];
-//    [self presentViewController:vc animated:YES
-//                    completion:nil];
-    
+    UIButton *mapLoadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [mapLoadButton setTitle:@"MapLoad" forState:UIControlStateNormal];
+    [mapLoadButton setFrame:CGRectMake(30, 270, 150, 50)];
+    [mapLoadButton setBackgroundColor:[UIColor blueColor]];
+    [self.view addSubview:mapLoadButton];
+    [mapLoadButton addTarget:self action:@selector(launchMapLoadVC) forControlEvents:UIControlEventTouchUpInside];
+
                                 
                                  
 }
@@ -90,7 +86,10 @@
     
 }
 
-
+-(void)launchMapLoadVC{
+    MapLoadVC *vc = [[MapLoadVC alloc]init];
+    [[self navigationController]pushViewController:vc animated:YES];
+}
 
 
 
