@@ -7,7 +7,7 @@
 //
 
 #import "MapLoadVC.h"
-
+#import "MapViewVC.h"
 @interface MapLoadVC ()
 
 @end
@@ -28,7 +28,7 @@
     mapButton.frame = CGRectMake(30, 140, 160, 50);
     [mapButton setTitle:@"Map" forState:UIControlStateNormal];
     mapButton.backgroundColor = [UIColor brownColor];
-    [mapButton addTarget:self action:@selector(openInAppleMaps:) forControlEvents:UIControlEventTouchUpInside];
+    [mapButton addTarget:self action:@selector(openMapViewVC) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:mapButton];
     
     
@@ -42,8 +42,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-
--(void)openInAppleMaps:(id)sender{
+//Original method was -(void)openInAppleMaps:(id)sender{
+//I didn't see the need for (id)sender, so I removed it.
+-(void)openInAppleMaps{//(id)sender{
     double lat = [self.mapLocations[0][@"lat"] doubleValue];
     double lng = [self.mapLocations[0][@"lng"] doubleValue];
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(lat, lng);
@@ -52,5 +53,12 @@
     mapItem.name = self.mapLocations[0][@"name"];
     [mapItem openInMapsWithLaunchOptions:nil];
 }
+
+-(void)openMapViewVC{
+    MapViewVC *vc = [[MapViewVC alloc] init];
+    [[self navigationController] pushViewController:vc animated:YES];
+}
+
+
 
 @end

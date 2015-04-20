@@ -12,6 +12,6 @@
 @interface MapLoadVC : UIViewController
 
 @property (strong, nonatomic) NSArray *mapLocations;
--(void) openInAppleMaps:(id)sender;
-
+-(void) openInAppleMaps;//(id)sender;
+-(void) openMapViewVC;
 @end

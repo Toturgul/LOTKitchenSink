@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F8E47FA1AE00D4500964EC0 /* MapViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8E47F91AE00D4500964EC0 /* MapViewVC.m */; };
 		0FEDC7CC1ADEE71800158ABE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEDC7CB1ADEE71800158ABE /* MapKit.framework */; };
 		0FEDC7CE1ADEE72500158ABE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEDC7CD1ADEE72500158ABE /* CoreLocation.framework */; };
 		0FEDC7D21ADEE93100158ABE /* MapLoadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEDC7D01ADEE93100158ABE /* MapLoadVC.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F8E47F81AE00D4500964EC0 /* MapViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewVC.h; sourceTree = "<group>"; };
+		0F8E47F91AE00D4500964EC0 /* MapViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewVC.m; sourceTree = "<group>"; };
 		0FEDC7CB1ADEE71800158ABE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0FEDC7CD1ADEE72500158ABE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0FEDC7CF1ADEE93100158ABE /* MapLoadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLoadVC.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				0FEDC7CF1ADEE93100158ABE /* MapLoadVC.h */,
 				0FEDC7D01ADEE93100158ABE /* MapLoadVC.m */,
 				0FEDC7D11ADEE93100158ABE /* MapLoadVC.xib */,
+				0F8E47F81AE00D4500964EC0 /* MapViewVC.h */,
+				0F8E47F91AE00D4500964EC0 /* MapViewVC.m */,
 			);
 			path = LOTKitchenSink;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				D4C0C0581AC8A615008C15ED /* LOTInstaResultsVC.m in Sources */,
 				D4E3FAD01AC5C09F00A5DEA9 /* firstInstagramViewController.m in Sources */,
 				D4D47C6F1ACB45AD00151B43 /* LOTInstagramTableViewCell.m in Sources */,
+				0F8E47FA1AE00D4500964EC0 /* MapViewVC.m in Sources */,
 				D4E3FAAB1AC49C9900A5DEA9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
