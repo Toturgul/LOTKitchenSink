@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "firstInstagramViewController.h"
 #import "MapLoadVC.h"
+#import "LOTPdfViewController.h"
 @interface ViewController ()
 -(void)createOrDismissView;
 -(void)makeViewController;
@@ -43,6 +44,15 @@
     [mapLoadButton setBackgroundColor:[UIColor blueColor]];
     [self.view addSubview:mapLoadButton];
     [mapLoadButton addTarget:self action:@selector(launchMapLoadVC) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UIButton *pdfButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [pdfButton setTitle:@"PDF" forState:UIControlStateNormal];
+    pdfButton.backgroundColor = [UIColor brownColor];
+    pdfButton.frame = CGRectMake(30, 330, 150, 50);
+    [self.view addSubview:pdfButton];
+    [pdfButton addTarget:self action:@selector(launchPdfVC) forControlEvents:UIControlEventTouchUpInside];
+    
 
                                 
                                  
@@ -73,6 +83,13 @@
     
     
 }
+
+
+-(void)launchPdfVC{
+    LOTPdfViewController *vc = [[LOTPdfViewController alloc]init];
+    [[self navigationController] pushViewController:vc animated:YES];
+}
+
 
 -(void)launchInstagramVC{
     
