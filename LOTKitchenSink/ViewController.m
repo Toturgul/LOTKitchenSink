@@ -10,6 +10,8 @@
 #import "firstInstagramViewController.h"
 #import "MapLoadVC.h"
 #import "LOTPdfViewController.h"
+#import "LOTCameraVC.h"
+
 @interface ViewController ()
 -(void)createOrDismissView;
 -(void)makeViewController;
@@ -32,7 +34,7 @@
     
     UIButton *instagramButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [instagramButton setTitle:@"Instagram" forState:UIControlStateNormal];
-    instagramButton.frame = CGRectMake(0, 200, 200, 60);
+    instagramButton.frame = CGRectMake(30, 200, 150, 50);
     instagramButton.backgroundColor = [UIColor redColor];
     [self.view addSubview:instagramButton];
     [instagramButton addTarget:self action:@selector(launchInstagramVC) forControlEvents:UIControlEventTouchUpInside];
@@ -53,8 +55,14 @@
     [self.view addSubview:pdfButton];
     [pdfButton addTarget:self action:@selector(launchPdfVC) forControlEvents:UIControlEventTouchUpInside];
     
-
-                                
+    
+    UIButton *cameraButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [cameraButton setTitle:@"Camera" forState:UIControlStateNormal];
+    cameraButton.backgroundColor = [UIColor purpleColor];
+    cameraButton.frame = CGRectMake(30, 390, 150, 50);
+    [self.view addSubview:cameraButton];
+    [cameraButton addTarget:self action:@selector(cameraVC) forControlEvents:UIControlEventTouchUpInside];
+    
                                  
 }
 
@@ -106,6 +114,11 @@
 -(void)launchMapLoadVC{
     MapLoadVC *vc = [[MapLoadVC alloc]init];
     [[self navigationController]pushViewController:vc animated:YES];
+}
+
+-(void) cameraVC{
+    LOTCameraVC *vc = [[LOTCameraVC alloc] init];
+    [[self navigationController] pushViewController:vc animated:YES];
 }
 
 

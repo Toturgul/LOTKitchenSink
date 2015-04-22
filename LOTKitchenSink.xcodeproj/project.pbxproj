@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F258F351AE5764E006C0EBC /* LOTPdfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F258F341AE5764E006C0EBC /* LOTPdfViewController.m */; };
+		0F258F3E1AE7F799006C0EBC /* LOTCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F258F3C1AE7F799006C0EBC /* LOTCameraVC.m */; };
+		0F258F3F1AE7F799006C0EBC /* LOTCameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F258F3D1AE7F799006C0EBC /* LOTCameraVC.xib */; };
 		0F8E47FA1AE00D4500964EC0 /* MapViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8E47F91AE00D4500964EC0 /* MapViewVC.m */; };
 		0FEDC7CC1ADEE71800158ABE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEDC7CB1ADEE71800158ABE /* MapKit.framework */; };
 		0FEDC7CE1ADEE72500158ABE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEDC7CD1ADEE72500158ABE /* CoreLocation.framework */; };
@@ -41,6 +43,9 @@
 /* Begin PBXFileReference section */
 		0F258F331AE5764E006C0EBC /* LOTPdfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOTPdfViewController.h; sourceTree = "<group>"; };
 		0F258F341AE5764E006C0EBC /* LOTPdfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOTPdfViewController.m; sourceTree = "<group>"; };
+		0F258F3B1AE7F799006C0EBC /* LOTCameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOTCameraVC.h; sourceTree = "<group>"; };
+		0F258F3C1AE7F799006C0EBC /* LOTCameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOTCameraVC.m; sourceTree = "<group>"; };
+		0F258F3D1AE7F799006C0EBC /* LOTCameraVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LOTCameraVC.xib; sourceTree = "<group>"; };
 		0F8E47F81AE00D4500964EC0 /* MapViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewVC.h; sourceTree = "<group>"; };
 		0F8E47F91AE00D4500964EC0 /* MapViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewVC.m; sourceTree = "<group>"; };
 		0FEDC7CB1ADEE71800158ABE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -164,6 +169,9 @@
 				0F8E47F91AE00D4500964EC0 /* MapViewVC.m */,
 				0F258F331AE5764E006C0EBC /* LOTPdfViewController.h */,
 				0F258F341AE5764E006C0EBC /* LOTPdfViewController.m */,
+				0F258F3B1AE7F799006C0EBC /* LOTCameraVC.h */,
+				0F258F3C1AE7F799006C0EBC /* LOTCameraVC.m */,
+				0F258F3D1AE7F799006C0EBC /* LOTCameraVC.xib */,
 			);
 			path = LOTKitchenSink;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 				D4E3FAB91AC49C9900A5DEA9 /* LaunchScreen.xib in Resources */,
 				D4E3FAB61AC49C9900A5DEA9 /* Images.xcassets in Resources */,
 				D491417B1AD6CDF100EC1A0E /* LOTInstaResultsVC.xib in Resources */,
+				0F258F3F1AE7F799006C0EBC /* LOTCameraVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F258F351AE5764E006C0EBC /* LOTPdfViewController.m in Sources */,
+				0F258F3E1AE7F799006C0EBC /* LOTCameraVC.m in Sources */,
 				D4D47C6C1ACA07F300151B43 /* LOTInstagramAPIClient.m in Sources */,
 				D4E3FAB11AC49C9900A5DEA9 /* ViewController.m in Sources */,
 				D4E3FAAE1AC49C9900A5DEA9 /* AppDelegate.m in Sources */,
