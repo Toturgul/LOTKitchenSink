@@ -16,6 +16,7 @@
 {
     CGSize _pageSize;
 }
+@property (strong, nonatomic) NSString *pdfPath;
 @end
 
 @implementation LOTPdfViewController
@@ -24,10 +25,17 @@
     [super viewDidLoad];
     UIButton *pdfButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [pdfButton setTitle:@"Create PDF" forState:UIControlStateNormal];
-    pdfButton.frame = CGRectMake(40, 200, 200, 60);
+    pdfButton.frame = CGRectMake(10, 200, 170, 60);
     pdfButton.backgroundColor = [UIColor redColor];
     [self.view addSubview:pdfButton];
     [pdfButton addTarget:self action:@selector(didClickMakePDF) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *showpdfButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [showpdfButton setTitle:@"Show PDF" forState:UIControlStateNormal];
+    showpdfButton.frame = CGRectMake(210, 200, 170, 60);
+    showpdfButton.backgroundColor = [UIColor redColor];
+    [self.view addSubview:showpdfButton];
+    [showpdfButton addTarget:self action:@selector(showPDF) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
@@ -74,9 +82,9 @@
     NSString *newPDFName = [NSString stringWithFormat:@"%@.pdf", name];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *pdfPath = [documentsDirectory stringByAppendingPathComponent:newPDFName];
-    
-    UIGraphicsBeginPDFContextToFile(pdfPath, CGRectZero, nil);
+    self.pdfPath = [documentsDirectory stringByAppendingPathComponent:newPDFName];
+    UIGraphicsBeginPDFContextToFile(self.pdfPath, CGRectZero, nil);
+
 }
 
 //--------------------------------------------------------------------------------------------------------
@@ -152,7 +160,18 @@
 //}
 
 
+//----------------------------------------------------------------------------------------------
+//Methods used to view pdf file
 
+-(void) showPDF{
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(60, 290, 200, 200)];
+    
+    NSURL *targetURL = [NSURL fileURLWithPath:self.pdfPath];
+    NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+    [webView loadRequest:request];
+    
+    [self.view addSubview:webView];
+}
 
 
 @end
